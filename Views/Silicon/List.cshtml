@@ -1,0 +1,34 @@
+﻿
+@model List<CodeFirstApproach.Models.Silicon>
+
+<h1>List Of Total Employee</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var silicon in Model)
+        {                     
+            <tr>
+                
+               
+                <td>@silicon.Name</td>
+                <td>@silicon.Age</td>
+                <td>@silicon.Salary</td>
+                <td>@silicon.Address</td>
+                <td>
+                    <a asp-controller="Silicon" asp-action="Edit" asp-route-id="@silicon.SiliconId" class="btn btn-primary">Edit</a>
+                    <a asp-controller="Silicon" asp-action="Delete" asp-route-id="@silicon.SiliconId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
